@@ -18,8 +18,10 @@ else:
 
 tag = ""
 try:
+	print(subprocess.check_output(["git", "--no-pager", "tag", "--sort", "-taggerdate", "--points-at" , "HEAD"]).decode("utf-8"))
 	tag = (
-		subprocess.check_output(["git", "describe", "--tags", "--abbrev=0", "--always",])
+		subprocess.check_output(["git", "--no-pager", "tag", "--sort", "-taggerdate", "--points-at" , "HEAD"])
+			.split("\n")[0]
 			.strip()
 			.decode("utf-8")
 	)

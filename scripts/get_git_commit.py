@@ -24,7 +24,7 @@ try:
 			.strip()
 			.decode("utf-8")
 	)
-
+	print("tag 0", tag)
 	if tag.startswith("v"):
 		tag = tag[1:]
 except Exception:
@@ -41,6 +41,9 @@ except Exception:
 	branch = ""
 
 output = f"'-DGIT_REV=\"{revision}\"'"
+
+print("tag 1", tag)
+
 
 if tag != "":
 	output += f" '-DFIRMWARE_VERSION=\"{tag}\"'"

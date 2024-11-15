@@ -19,7 +19,10 @@ else:
 tag = ""
 try:
 	tag = (
-		os.environ.get('RELEASE_VERSION')
+		subprocess.check_output(["git", "describe", "--tags", "--abbrev=0"])
+			.split("\n")[0]
+			.strip()
+			.decode("utf-8")
 	)
 	print("tag 0", tag)
 	if tag.startswith("v"):

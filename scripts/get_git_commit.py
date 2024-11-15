@@ -35,8 +35,7 @@ except Exception:
 	branch = ""
 
 output = f"-DGIT_REV='\"{revision}\"'"
-
-print("tag 1", tag)
+print("tag test", tag)
 
 
 if tag != "":

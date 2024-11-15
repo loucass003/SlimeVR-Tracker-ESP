@@ -20,7 +20,6 @@ tag = ""
 try:
 	tag = (
 		subprocess.check_output(["git", "describe", "--tags", "--abbrev=0"])
-			.split("\n")[0]
 			.strip()
 			.decode("utf-8")
 	)

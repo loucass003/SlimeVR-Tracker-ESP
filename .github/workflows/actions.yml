@@ -50,7 +50,7 @@ jobs:
           pip install --upgrade platformio
 
       - name: Run builds
-        run: python ./script/get_git_commit.py
+        run: python scripts/get_git_commit.py
 
       # - name: Upload binaries
       #   uses: actions/upload-artifact@v4

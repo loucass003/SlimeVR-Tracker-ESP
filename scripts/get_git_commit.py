@@ -19,11 +19,8 @@ else:
 tag = ""
 try:
 	tag = subprocess.check_output(["git", "--no-pager", "tag", "--sort", "-taggerdate", "--points-at" , "HEAD"]).strip().decode("utf-8")
-	print("TAG 0", tag)
 	if tag.startswith("v"):
 		tag = tag[1:]
-	print("TAG 0-1", tag)
-
 except Exception:
 	tag = ""
 
@@ -38,8 +35,6 @@ except Exception:
 	branch = ""
 
 output = f"-DGIT_REV='\"{revision}\"'"
-print("tag test", tag)
-
 
 if tag != "":
 	output += f" -DFIRMWARE_VERSION='\"{tag}\"'"

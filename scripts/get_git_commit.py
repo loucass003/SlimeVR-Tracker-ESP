@@ -19,7 +19,7 @@ else:
 tag = ""
 try:
 	tag = (
-		subprocess.check_output(["git", "describe", "--tags", "--abbrev=0"])
+		subprocess.check_output(["git", "describe", "--tags", "--abbrev=0", "--always",])
 			.strip()
 			.decode("utf-8")
 	)

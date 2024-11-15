@@ -19,8 +19,11 @@ else:
 tag = ""
 try:
 	tag = (subprocess.check_output(["git", "--no-pager", "tag", "--sort", "-taggerdate", "--points-at" , "HEAD"]).decode("utf-8"))
+	print("TAG 0", tag)
 	if tag.startswith("v"):
 		tag = tag[1:]
+	print("TAG 0-1", tag)
+
 except Exception:
 	tag = ""
 
